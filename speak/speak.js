@@ -20,11 +20,14 @@ exports.action = function(data, callback){
 
 	    	if (error || response.statusCode != 200) {
 	    		console.log("Erreur: " + response.statusCode);
+	    		SARAH.speak("Erreur lors de l'émulate.");
 	    		callback({'tts': "Erreur lors de l'émulate."});
 		    }
 
-		    if(html != "") {
-				var resultat = html;
+		    var html_result = html.trim();
+
+		    if(html_result != "") {
+				var resultat = html_result;
 		    } else {
 		    	var resultat = "Je n'ai pas compris.";
 		    }
@@ -35,7 +38,9 @@ exports.action = function(data, callback){
 	    });
 
 	} else {
-		console.log("Désolé, je n'ai pas de texte à interpreter.");
-		callback({ 'tts': "Désolé, je n'ai pas de texte à interpreter."});
+		var error = "Désolé, je n'ai pas de texte à interpreter.";
+		console.log(error);
+		SARAH.speak(error);
+		callback({ 'tts': error});
 	}
 }
