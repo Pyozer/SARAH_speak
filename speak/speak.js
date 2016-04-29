@@ -14,7 +14,7 @@ exports.action = function(data, callback){
 
 		var request = require('request');
 
-		var url = "http://127.0.0.1:" + config.client_port + "/?emulate=" + encodeURI(emulate_request);
+		var url = "http://" + config.client_ip + ":" + config.client_port + "/?emulate=" + encodeURI(emulate_request);
 		
 		request({ 'uri': url }, function(error, response, html) {
 

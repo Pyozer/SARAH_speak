@@ -2,8 +2,9 @@
 	"modules" : { 
 		"speak"  : {
 			"description": "Ce plugin permet de gérer ou non le retour TTS d'un émulate (pour V4)",
+			"client_ip": "127.0.0.1",
 			"client_port": "8888",
-			"version": "1.0",
+			"version": "1.5",
 			"auteur": "Jean-Charles Moussé"
 		}
 	}
